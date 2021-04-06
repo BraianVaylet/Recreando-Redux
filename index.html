@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recreando Redux</title>
+</head>
+<body>
+
+  <script>
+    // Recreadno Redux
+
+    // 1. createStore
+    const createStore = (reducer, initialState) => {
+      let state = initialState  // inicializo mi estado local
+      let updater = () => {}    // mi actualizador
+
+      // 1.a. getState (obtengo el estado)
+      const getState = _ => state
+      // 1.b. dispatch (realizo una accion)
+      const dispatch = action => {
+        state = reducer(state, action)
+        updater()
+      }
+      // 1.c. subscribe (detecto los cambios)
+      const subscribe = listener => {
+        updater = listener
+      }
+
+      return {
+        getState,
+        dispatch,
+        subscribe
+      }
+    }
+
+    // 2. reducer
+    const reducer = (state, action) => action
+
+    const store = createStore(reducer, 'estado inicial de la app')
+    store.subscribe(() => console.log('ha cambiado algo en el store', store.getState()))
+    store.dispatch('voy a cambiar algo')
+    // store.getState()
+
+  </script>
+  
+</body>
+</html>

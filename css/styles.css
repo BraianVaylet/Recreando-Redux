@@ -7,7 +7,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #00000063;
+  background: #8c53c6;
 }
 .wrapper {
   max-width: 1020px;
@@ -17,7 +17,7 @@ h1 {
   font-size: 70px;
   margin: 0;
   /* line-height: 100px; */
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke: 2px rgba(255,255,255,.7);
 }
 p {
   max-width: 32em;
@@ -35,8 +35,7 @@ p {
   width: 150px;
   height: 150px;
   outline: 0;
-  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.5),
-    -5px -5px 10px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 10px 0 rgba(0,0,0,.5), -5px -5px 10px 0 rgba(255,255,255,.3);
   position: relative;
 }
 details {
@@ -49,7 +48,7 @@ details {
 }
 .burn:before {
   border: 3px solid white;
-  content: "";
+  content: '';
   background-color: #00aef7;
   z-index: -1;
   position: absolute;
@@ -61,12 +60,12 @@ details {
 }
 
 .burn:active {
-  box-shadow: inset 10px 10px 10px 0 rgba(0, 0, 0, 0.5),
-    inset -10px -10px 10px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: inset 10px 10px 10px 0 rgba(0,0,0,.5), inset -10px -10px 10px 0 rgba(255,255,255,.3);
 }
 
 .result {
   font-size: 3em;
   color: white;
-  text-shadow: 5px 2px 0 orangered;
+  text-shadow: 5px 2px 0 red;
 }
+
